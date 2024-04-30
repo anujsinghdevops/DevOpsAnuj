@@ -18,5 +18,10 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
